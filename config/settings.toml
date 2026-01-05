@@ -1,0 +1,32 @@
+[general]
+home-description = "Teleport to home point"
+sethome-description = "Set home for player"
+home-command = "home"
+sethome-command = "sethome"
+saves-path = "houses.json"
+error-message = "Home point not exists!"
+error-color = "red"
+success-message = "Home point changed!"
+success-color = "green"
+readable-json = false
+sethome_logs = true
+home_logs = true
+
+[client]
+is-home-cheat = false
+is-sethome-cheat = false
+
+[server]
+can-use-home-unauthorized = true
+can-use-sethome-unauthorized = true
+admin-roles = ["member"]
+home-admin-logs = true
+sethome-admin-logs = true
+
+[colors]
+red = "[#ff0000]"
+yellow = "[#ffff00]"
+blue = "[#0000FF]"
+black = "[#000000]"
+green = "[#00FF00]"
+white = "[#FFFFFF]"
