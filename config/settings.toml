@@ -19,7 +19,7 @@ is-sethome-cheat = false
 [server]
 can-use-home-unauthorized = true
 can-use-sethome-unauthorized = true
-admin-roles = ["member"]
+admin-roles = ["admin"]
 home-admin-logs = true
 sethome-admin-logs = true
 
