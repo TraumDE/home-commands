@@ -1,6 +1,6 @@
 ![logo](icon.png)
 
-# Home Commands 1.0.0 - [Voxel Core](https://github.com/MihailRis/voxelcore) Content Pack
+# Home Commands 1.0.1 - [Voxel Core](https://github.com/MihailRis/voxelcore) Content Pack
 
 ## Скачать
 
