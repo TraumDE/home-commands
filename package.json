@@ -1,7 +1,7 @@
 {
   "id": "home_commands",
   "title": "Home Commands",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "creator": "Eugene301",
   "description": "Add to game two new commands /sethome and /home",
   "dependencies": [

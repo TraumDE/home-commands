@@ -11,6 +11,7 @@ success-color = "green"
 readable-json = false
 sethome_logs = true
 home_logs = true
+coords_limits = { X=100000, Z=100000  }
 
 [client]
 is-home-cheat = false
@@ -19,7 +20,7 @@ is-sethome-cheat = false
 [server]
 can-use-home-unauthorized = true
 can-use-sethome-unauthorized = true
-admin-roles = ["admin"]
+admin-roles = ["member"]
 home-admin-logs = true
 sethome-admin-logs = true
 

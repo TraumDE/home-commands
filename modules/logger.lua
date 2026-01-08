@@ -9,7 +9,6 @@ local logger = {}
 function logger.log(message, enabled, ...)
     if daveLogger and enabled then
         daveLogger:info(message, ...)
-        daveLogger:save()
     end
 end
 
