@@ -51,6 +51,11 @@ local function writeData(identity, posX, posY, posZ)
 end
 
 local function mainClient (args, _kwargs)
+    if args[2] > settings.COORDS_LIMITS.X or args[4] > settings.COORDS_LIMITS.Z then
+        console.chat("You can`t set home point over limit")
+        return
+    end
+
     writeData(unpack(args))
     player.set_spawnpoint(unpack(args))
     console.chat(string.format("%s%s", settings.COLORS[settings.SUCCESS_COLOR], settings.SUCCESS_MESSAGE))
@@ -66,6 +71,12 @@ local function mainServer (args, client)
     local posX, posY, posZ = player.get_pos(playerId)
 
     if targetIdentity and table.has(settings.ADMIN_ROLES, account.role) then
+        
+        if  targetX > settings.COORDS_LIMITS.X or targetZ > settings.COORDS_LIMITS.Z then
+            serverConsole.tell(string.format("%sYou can`t set home point over limit",  settings.COLORS[ settings.ERROR_COLOR]), client)
+            return
+        end
+
         if not targetX and not targetY and not targetZ then
             writeData(targetIdentity, posX, posY, posZ)
             serverConsole.tell(string.format("%sHouse changed for other player", settings.COLORS[settings.SUCCESS_COLOR]),client)
@@ -82,6 +93,11 @@ local function mainServer (args, client)
         serverConsole.tell(string.format("%sHouse changed for other player", settings.COLORS[settings.SUCCESS_COLOR]),client)
         logger.log("Admin: %s Changed home point for Player: %s To: X:%f Y:%f Z:%f", settings.SETHOME_ADMIN_LOGS, identity, targetIdentity, targetX, targetY, targetZ)
 
+        return
+    end
+
+    if posX > settings.COORDS_LIMITS.X or posZ > settings.COORDS_LIMITS.Z then
+        serverConsole.tell(string.format("%sYou can`t set home point over limit",  settings.COLORS[ settings.ERROR_COLOR]), client)
         return
     end
 

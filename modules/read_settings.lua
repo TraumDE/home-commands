@@ -21,5 +21,6 @@ settings.SETHOME_LOGS = importSetting['general']['sethome_logs']
 settings.ADMIN_ROLES = importSetting['server']['admin-roles']
 settings.HOME_ADMIN_LOGS = importSetting['server']['home-admin-logs']
 settings.SETHOME_ADMIN_LOGS = importSetting['server']['sethome-admin-logs']
+settings.COORDS_LIMITS = importSetting['general']['coords_limits']
 
 return settings
